@@ -64,6 +64,7 @@ const routes : Routes = [
 	RouterModule,
 	RouterModule.forRoot(routes),
 	FormsModule,
+	HttpClientModule,
 	ReactiveFormsModule,
 	BrowserAnimationsModule,
 	ToastrModule.forRoot({ 

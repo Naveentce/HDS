@@ -1,7 +1,3 @@
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
- */
-
  import { Component, OnInit } from '@angular/core';
  import { ToastrService } from 'ngx-toastr';
 
@@ -53,6 +49,3 @@
  		}
  	}
  }
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
- */

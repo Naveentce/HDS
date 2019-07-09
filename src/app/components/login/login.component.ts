@@ -35,8 +35,13 @@ export class LoginComponent implements OnInit {
 
 	// Initicate login
 	doLogin(){
-		let login = this.userService.doLogin(this.loginForm.value);
-		this.success(login);
+		//let login = this.userService.doLoginTest(this.loginForm.value);
+            this.userService.doLoginTest(this.loginForm.value).subscribe( data => {
+                if ( data ) {
+					this.success(data);
+                } 
+			});
+			
 	}
 
 	// Login success function
@@ -51,7 +56,3 @@ export class LoginComponent implements OnInit {
 	}
 
 }
-
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
- */

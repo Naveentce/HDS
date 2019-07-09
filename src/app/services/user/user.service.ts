@@ -1,14 +1,12 @@
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
- */
 
 import { Injectable } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class UserService {
 
-	constructor() { }
+	constructor(private http:HttpClient) { }
 
 	doLogin(data){
 		if (data.email == "admin@yopmail.com" && data.password == "admin123") {
@@ -26,11 +24,11 @@ export class UserService {
 		}
 	}
 
+	public doLoginTest<T>(data): Observable<T> {
+        return this.http.get<T>('http://localhost:8085/doLogin');
+    }
+
 	// doRegister(data){
 		// 	return this.http.post('user-add.php',data);	
 		// }
 	}
-
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
- */

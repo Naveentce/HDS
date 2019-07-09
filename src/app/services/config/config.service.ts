@@ -66,7 +66,3 @@ function slideToLeft() {
 }
 
 
-
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
- */

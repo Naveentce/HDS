@@ -12,48 +12,48 @@ import { Component } from '@angular/core';
 
 
 export class AppComponent {
-	title = 'Student Management By Sangwin Gawande';
+	title = 'HDS TEAM Management By Naveen';
 
 	// Add few students for initial listing
 	studentsList = [
 	{	
 		id : 1,
-		first_name : "Sangwin",
-		last_name : "Gawande",
-		email : "sangwin@yopmail.com",
-		phone : 9503733178,
+		first_name : "Naveen",
+		last_name : "Selvaraj",
+		email : "naveen.s@innovasolutions.com",
+		phone : "ISXXXX",
 		department : "Science"
 	},
 	{
 		id : 2,
-		first_name : "Oman",
-		last_name : "Umir",
+		first_name : "Sakthivel",
+		last_name : "Subbaiyan",
 		email : "oman@yopmail.com",
-		phone : 8574889658,
+		phone : "ISXXXX",
 		department : "Commerce"
 	},
 	{
 		id : 3,
-		first_name : "Tina",
-		last_name : "Dillon",
+		first_name : "Logesh",
+		last_name : "Kandasamy",
 		email : "tina@yopmail.com",
-		phone : 7485889658,
+		phone : "ISXXXX",
 		department : "Science"
 	},
 	{
 		id : 4,
-		first_name : "John",
-		last_name : "Doe",
+		first_name : "Kamal",
+		last_name : "K",
 		email : "john@yopmail.com",
-		phone : 9685589748,
+		phone : "ISXXXX",
 		department : "Arts"
 	},
 	{
 		id : 5,
-		first_name : "Peter",
-		last_name : "Parker",
+		first_name : "Suganya",
+		last_name : "M",
 		email : "peter@yopmail.com",
-		phone : 8595856547,
+		phone : "ISXXXX",
 		department : "Engineering"
 	}
 	];
@@ -64,6 +64,3 @@ export class AppComponent {
 	}
 }
 
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
- */
