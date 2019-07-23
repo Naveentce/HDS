@@ -2,11 +2,11 @@
  * Created By : Sangwin Gawande (http://sangw.in)
  */
 
-import { HighlightStudentDirective } from './highlight-student.directive';
+import { HighlightEmployeeDirective } from './highlight-employee.directive';
 
-describe('HighlightStudentDirective', () => {
+describe('HighlightEmployeeDirective', () => {
   it('should create an instance', () => {
-    const directive = new HighlightStudentDirective();
+    const directive = new HighlightEmployeeDirective();
     expect(directive).toBeTruthy();
   });
 });

@@ -7,9 +7,9 @@
  import { ToastrService } from 'ngx-toastr';
 
  // Components
- import { StudentListComponent } from '../student/list/student-list.component';
- import { StudentDetailsComponent } from '../student/details/student-details.component';
- import { StudentAddComponent } from '../student/add/student-add.component';
+ import { StudentListComponent } from '../employee/list/employee-list.component';
+ import { StudentDetailsComponent } from '../employee/details/employee-details.component';
+ import { StudentAddComponent } from '../employee/add/employee-add.component';
 
  // Services
  import { routerTransition } from '../../services/config/config.service';
@@ -53,19 +53,19 @@
  export const homeChildRoutes : Routes = [
  {
  	path: '',
- 	component: StudentListComponent
+ 	component: EmployeeListComponent
  },
  {
  	path: 'add',
- 	component: StudentAddComponent
+ 	component: EmployeeAddComponent
  },
  {
  	path: 'update/:id',
- 	component: StudentAddComponent
+ 	component: EmployeeAddComponent
  },
  {
  	path: 'detail/:id',
- 	component: StudentDetailsComponent
+ 	component: EmployeeDetailsComponent
  }
  ];
 

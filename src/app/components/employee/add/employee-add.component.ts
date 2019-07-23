@@ -7,32 +7,32 @@
 
  // Services
  import { ValidationService } from '../../../services/config/config.service';
- import { StudentService } from '../../../services/student/student.service';
+ import { EmployeeService } from '../../../services/employee/employee.service';
  import { routerTransition } from '../../../services/config/config.service';
  
  import { ToastrService } from 'ngx-toastr';
 
  @Component({
- 	selector: 'app-student-add',
- 	templateUrl: './student-add.component.html',
- 	styleUrls: ['./student-add.component.css'],
+ 	selector: 'app-employee-add',
+ 	templateUrl: './employee-add.component.html',
+ 	styleUrls: ['./employee-add.component.css'],
  	animations: [routerTransition()],
  	host: {'[@routerTransition]': ''}
  })
 
- export class StudentAddComponent implements OnInit {
- 	// create studentAddForm of type FormGroup 
- 	private studentAddForm : FormGroup;
+ export class EmployeeAddComponent implements OnInit {
+ 	// create employeeAddForm of type FormGroup 
+ 	private employeeAddForm : FormGroup;
  	index:any;
 
- 	constructor(private formBuilder: FormBuilder,private router: Router, private route: ActivatedRoute, private studentService:StudentService,private toastr: ToastrService) { 
+ 	constructor(private formBuilder: FormBuilder,private router: Router, private route: ActivatedRoute, private employeeService:EmployeeService,private toastr: ToastrService) { 
 
  		// Check for route params
  		this.route.params.subscribe(params => {
  			this.index = params['id'];
  			// check if ID exists in route & call update or add methods accordingly
  			if (this.index && this.index != null && this.index != undefined) {
- 				this.getStudentDetails(this.index);
+ 				this.getEmployeeDetails(this.index);
  			}else{
  				this.createForm(null);
  			}
@@ -42,45 +42,45 @@
  	ngOnInit() {
  	}
 
- 	// Submit student details form
+ 	// Submit employee details form
  	doRegister(){
  		if (this.index && this.index != null && this.index != undefined) {
- 			this.studentAddForm.value.id = this.index
+ 			this.employeeAddForm.value.id = this.index
  		}else{
  			this.index = null;
  		}
- 		let studentRegister = this.studentService.doRegisterStudent(this.studentAddForm.value, this.index);
- 		if(studentRegister) {
- 			if (studentRegister.code == 200) {
- 				this.toastr.success(studentRegister.message,"Success");
+ 		let employeeRegister = this.employeeService.doRegisterEmployee(this.employeeAddForm.value, this.index);
+ 		if(employeeRegister) {
+ 			if (employeeRegister.code == 200) {
+ 				this.toastr.success(employeeRegister.message,"Success");
  				this.router.navigate(['/']);
  			}else{
- 				this.toastr.error(studentRegister.message,"Failed");
+ 				this.toastr.error(employeeRegister.message,"Failed");
  			}
  		}
  	}
 
  	// If this is update form, get user details and update form
  	getStudentDetails(index:number){
- 		let studentDetail = this.studentService.getStudentDetails(index);
- 		this.createForm(studentDetail);
+ 		let employeeDetail = this.employeeService.getEmployeeDetails(index);
+ 		this.createForm(employeeDetail);
  	}
 
  	// If this is update request then auto fill form
  	createForm(data){
  		if (data == null) {
- 			this.studentAddForm = this.formBuilder.group({
+ 			this.employeeAddForm = this.formBuilder.group({
  				first_name: ['',  [Validators.required,Validators.minLength(3),Validators.maxLength(50)]],
  				last_name: ['',  [Validators.required,Validators.minLength(3),Validators.maxLength(50)]],
  				phone: ['',  [Validators.required,ValidationService.checkLimit(5000000000,9999999999)]],
  				email: ['',  [Validators.required, ValidationService.emailValidator]]
  			});			
  		}else{
- 			this.studentAddForm = this.formBuilder.group({
- 				first_name: [data.studentData.first_name,  [Validators.required,Validators.minLength(3),Validators.maxLength(50)]],
- 				last_name: [data.studentData.last_name,  [Validators.required,Validators.minLength(3),Validators.maxLength(50)]],
- 				phone: [data.studentData.phone,  [Validators.required,ValidationService.checkLimit(5000000000,9999999999)]],
- 				email: [data.studentData.email,  [Validators.required, ValidationService.emailValidator]]
+ 			this.employeeAddForm = this.formBuilder.group({
+ 				first_name: [data.employeeData.first_name,  [Validators.required,Validators.minLength(3),Validators.maxLength(50)]],
+ 				last_name: [data.employeeData.last_name,  [Validators.required,Validators.minLength(3),Validators.maxLength(50)]],
+ 				phone: [data.employeeData.phone,  [Validators.required,ValidationService.checkLimit(5000000000,9999999999)]],
+ 				email: [data.employeeData.email,  [Validators.required, ValidationService.emailValidator]]
  			});
  		}
  	}

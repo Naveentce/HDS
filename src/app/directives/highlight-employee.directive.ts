@@ -4,7 +4,7 @@ import { Directive, ElementRef,HostListener } from '@angular/core';
 @Directive({
   selector: '[appHighlightStudent]'
 })
-export class HighlightStudentDirective {
+export class HighlightEmployeeDirective {
 
 	constructor(private el: ElementRef) {
 	}

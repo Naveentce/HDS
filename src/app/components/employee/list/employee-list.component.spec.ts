@@ -3,7 +3,7 @@
  */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StudentListComponent } from './student-list.component';
+import { StudentListComponent } from './employee-list.component';
 
 describe('StudentListComponent', () => {
   let component: StudentListComponent;

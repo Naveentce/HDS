@@ -55,6 +55,14 @@ export class AppComponent {
 		email : "peter@yopmail.com",
 		phone : "ISXXXX",
 		department : "Engineering"
+	},
+	{
+		id : 5,
+		first_name : "Navaneethan",
+		last_name : "N",
+		email : "peter@yopmail.com",
+		phone : "ISXXXX",
+		department : "Engineering"
 	}
 	];
 
